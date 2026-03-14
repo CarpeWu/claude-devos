@@ -1,0 +1,24 @@
+# Personal Preferences
+#
+# This file customizes Claude's behavior for YOU specifically.
+# It is gitignored and never shared with your team.
+#
+# To activate: rename this file to CLAUDE.local.md
+#   mv CLAUDE.local.md.example CLAUDE.local.md
+
+## Communication Style
+- Be terse. Skip preamble and summaries unless I ask.
+- Don't explain code you wrote unless I ask "why."
+- When I say "fix it," apply the fix directly — don't list options.
+
+## Local Environment
+- Dev server runs on port 3000
+- Database runs on localhost:5432
+- My project root is ~/code/myproject
+- I use zsh on macOS
+
+## Workflow Preferences
+- Always run tests after editing code, don't wait for reminders.
+- Commit with --no-verify when I say "quick commit."
+- When reviewing, focus on logic errors over style — the linter catches style.
+- I prefer small, focused commits over large ones.

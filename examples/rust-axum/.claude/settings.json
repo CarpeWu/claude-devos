@@ -1,0 +1,63 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo test*)",
+      "Bash(cargo check*)",
+      "Bash(cargo build*)",
+      "Bash(cargo run*)",
+      "Bash(cargo clippy*)",
+      "Bash(cargo fmt*)",
+      "Bash(cargo doc*)",
+      "Bash(cargo sqlx prepare*)",
+      "Bash(sqlx migrate run*)",
+      "Bash(sqlx migrate add*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(wc*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(ls*)",
+      "Bash(echo*)",
+      "Bash(pwd)",
+      "Bash(which*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
+    ],
+    "deny": [
+      "Bash(cargo publish*)",
+      "Bash(cargo install*)",
+      "Bash(rm -rf*)",
+      "Bash(sqlx migrate revert*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset --hard*)",
+      "Bash(curl*)",
+      "Bash(wget*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/protect-files.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/post-edit-reminder.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hook": ".claude/hooks/verify-completion.sh"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm test*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm format*)",
+      "Bash(pnpm typecheck*)",
+      "Bash(pnpm dev*)",
+      "Bash(pnpm build*)",
+      "Bash(pnpm prisma generate*)",
+      "Bash(pnpm prisma studio*)",
+      "Bash(pnpm prisma migrate dev*)",
+      "Bash(pnpm prisma migrate deploy*)",
+      "Bash(npx tsc --noEmit*)",
+      "Bash(npx prisma*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(wc*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(ls*)",
+      "Bash(echo*)",
+      "Bash(pwd)",
+      "Bash(which*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
+    ],
+    "deny": [
+      "Bash(pnpm publish*)",
+      "Bash(npm publish*)",
+      "Bash(rm -rf*)",
+      "Bash(pnpm prisma migrate reset*)",
+      "Bash(pnpm prisma db push*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset --hard*)",
+      "Bash(curl*)",
+      "Bash(wget*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/protect-files.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/post-edit-reminder.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hook": ".claude/hooks/verify-completion.sh"
+      }
+    ]
+  }
+}

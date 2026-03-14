@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(poetry run pytest*)",
+      "Bash(poetry run ruff*)",
+      "Bash(poetry run mypy*)",
+      "Bash(poetry run uvicorn*)",
+      "Bash(poetry run alembic*)",
+      "Bash(python -m pytest*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(wc*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(ls*)",
+      "Bash(echo*)",
+      "Bash(pwd)",
+      "Bash(which*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
+    ],
+    "deny": [
+      "Bash(poetry publish*)",
+      "Bash(pip install*)",
+      "Bash(rm -rf*)",
+      "Bash(docker-compose down*)",
+      "Bash(alembic downgrade*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset --hard*)",
+      "Bash(curl*)",
+      "Bash(wget*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/protect-files.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/post-edit-reminder.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hook": ".claude/hooks/verify-completion.sh"
+      }
+    ]
+  }
+}

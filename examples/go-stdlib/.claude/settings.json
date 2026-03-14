@@ -1,0 +1,64 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go test*)",
+      "Bash(go build*)",
+      "Bash(go run*)",
+      "Bash(go vet*)",
+      "Bash(go mod tidy)",
+      "Bash(golangci-lint*)",
+      "Bash(gofmt*)",
+      "Bash(goimports*)",
+      "Bash(make*)",
+      "Bash(goose*status*)",
+      "Bash(goose*up*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(wc*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(ls*)",
+      "Bash(echo*)",
+      "Bash(pwd)",
+      "Bash(which*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
+    ],
+    "deny": [
+      "Bash(go install*)",
+      "Bash(rm -rf*)",
+      "Bash(goose*down*)",
+      "Bash(goose*reset*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset --hard*)",
+      "Bash(curl*)",
+      "Bash(wget*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/protect-files.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hook": ".claude/hooks/post-edit-reminder.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hook": ".claude/hooks/verify-completion.sh"
+      }
+    ]
+  }
+}
