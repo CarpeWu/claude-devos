@@ -67,7 +67,7 @@ DevOS 是 Claude Code 的配置模板。它让你的项目结构化，使 Claude
 ### 第一步：将文件复制到你的项目
 
 ```bash
-git clone https://github.com/YOUR_ORG/claude-devos.git /tmp/claude-devos
+git clone https://github.com/CarpeWu/claude-devos.git /tmp/claude-devos
 cp /tmp/claude-devos/template/CLAUDE.md your-project/
 cp /tmp/claude-devos/template/CUSTOMIZE.md your-project/
 cp /tmp/claude-devos/template/CLAUDE.local.md.example your-project/

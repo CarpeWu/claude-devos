@@ -67,7 +67,7 @@ Concretely, the template gives you **20 files** organized into six categories:
 ### Step 1: Copy the files into your project
 
 ```bash
-git clone https://github.com/YOUR_ORG/claude-devos.git /tmp/claude-devos
+git clone https://github.com/CarpeWu/claude-devos.git /tmp/claude-devos
 cp /tmp/claude-devos/template/CLAUDE.md your-project/
 cp /tmp/claude-devos/CUSTOMIZE.md your-project/
 cp /tmp/claude-devos/template/CLAUDE.local.md.example your-project/

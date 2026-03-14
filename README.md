@@ -23,14 +23,14 @@ runs your tests before declaring it's done.
 
 ```bash
 cd your-project
-git clone https://github.com/anthropic-labs/claude-devos.git /tmp/claude-devos
+git clone https://github.com/CarpeWu/claude-devos.git /tmp/claude-devos
 /tmp/claude-devos/install.sh
 ```
 
 **Option B: Manual copy**
 
 ```bash
-git clone https://github.com/anthropic-labs/claude-devos.git /tmp/claude-devos
+git clone https://github.com/CarpeWu/claude-devos.git /tmp/claude-devos
 cp /tmp/claude-devos/template/CLAUDE.md your-project/
 cp /tmp/claude-devos/template/CLAUDE.local.md.example your-project/
 cp -r /tmp/claude-devos/template/.claude your-project/
