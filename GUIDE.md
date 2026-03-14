@@ -102,6 +102,8 @@ command -v jq || echo "Install jq: brew install jq (macOS) or apt install jq (Li
 
 Without `jq`, every hook exits with error code 1. The hooks degrade gracefully (they don't crash Claude Code), but none of the guardrails will function.
 
+Windows users: hook scripts require a bash environment. Use WSL2 for full compatibility, or Git Bash as a partial alternative.
+
 ### Step 5: Customize for your project
 
 Paste the contents of `CUSTOMIZE.md` into Claude Code. It will read the template files, ask about your project, and rewrite everything to match your stack. See `CUSTOMIZE.md` for details.

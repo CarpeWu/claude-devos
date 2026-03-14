@@ -10,6 +10,7 @@
 
 - 已安装并可用的 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 - 已安装 `jq`（macOS：`brew install jq`，Linux：`apt install jq`）
+- 推荐 macOS 或 Linux。Windows 用户请使用 WSL2 以获得完整兼容性。
 
 ## 快速开始
 

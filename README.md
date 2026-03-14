@@ -15,6 +15,7 @@ runs your tests before declaring it's done.
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and working
 - `jq` installed (`brew install jq` on macOS, `apt install jq` on Linux)
+- macOS or Linux recommended. Windows users: use WSL2 for full compatibility.
 
 ## Quick Start
 

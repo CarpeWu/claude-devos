@@ -102,6 +102,8 @@ command -v jq || echo "Install jq: brew install jq (macOS) or apt install jq (Li
 
 没有 `jq`，每个 hook 都会以错误码 1 退出。hooks 会优雅降级（不会导致 Claude Code 崩溃），但所有守卫机制都将失效。
 
+Windows 用户：hook 脚本需要 bash 环境，请使用 WSL2 以获得完整兼容性，或使用 Git Bash 作为部分替代方案。
+
 ### 第五步：个性化配置
 
 将 `CUSTOMIZE.md` 的内容粘贴到 Claude Code 中。它会读取模板文件，询问你的项目情况，然后改写所有内容以匹配你的技术栈。详见 `CUSTOMIZE.md`。
